@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal - Casamento</title>
+  <link rel="stylesheet" href="pagina-principal.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="pew.png">
+</head>
+<body>
+  <header>
+    <h1>P ❤ W</h1>
+    <!-- Botão do menu -->
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <!-- Menu recolhido por padrão -->
+    <nav id="menu" class="menu-hidden">
+      <a href="#contador">Contagem</a>
+      <a href="#padrinhos">Padrinhos</a>
+      <a href="#local">Local</a>
+      <a href="#presenca">Confirme Presença</a>
+    </nav>
+  </header>
+
+  <!-- HERO COM ESTILO REFINADO -->
+  <section class="hero">
+    <div class="hero-card">
+      <h2>Priscila <span>&</span> Walterlan</h2>
+      <p class="subtitle">convidam você para a</p>
+      <p class="highlight">cerimônia de casamento</p>
+      <div class="date">Sábado, 22 de Novembro de 2025 às 19h</div>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO VERSÍCULO -->
+  <section id="versiculo" class="section-card">
+    <blockquote>
+      <p>"Dois são melhores do que um, porque têm um bom retorno para o seu trabalho: se um cair, o outro o ajuda a se levantar."</p>
+      <footer>(Eclesiastes 4:9-10)</footer>
+    </blockquote>
+  </section>
+
+  <section id="contador" class="section-card">
+    <h3>Contagem Regressiva</h3>
+    <div id="countdown"></div>
+  </section>
+
+ <!-- SEÇÃO PADRINHOS COM CARROSSEL -->
+<section id="padrinhos" class="section-card">
+  <h3>Nossos Padrinhos</h3>
+  <div class="carousel">
+    <div class="carousel-item active padrinho-card">
+      <h4>Pamella e Renê</h4>
+      <p>A felicidade do nosso ‘sim’ é ainda maior por termos vocês ao nosso lado.</p>
+    </div>
+
+    <div class="carousel-item padrinho-card">
+      <h4>Monique e Alex</h4>
+      <p>Mais que padrinhos, amigos que o coração escolheu para se tornarem família.</p>
+    </div>
+
+    <div class="carousel-item padrinho-card">
+      <h4>Danielli e Wesley</h4>
+      <p>Ter vocês como padrinhos é uma honra que reflete o quanto são importantes em nossa história.</p>
+    </div>
+  </div>
+
+   <div class="carousel-item padrinho-card">
+      <h4>Mariana e Leandro</h4>
+      <p>Ser padrinho é título, mas ser irmão é para sempre</p>
+    </div>
+
+     <div class="carousel-item padrinho-card">
+      <h4>Valquíria e Weligton</h4>
+      <p>Vocês não só presenciaram nossa história, mas também escreveram um pedaço dela.</p>
+    </div>
+
+     <div class="carousel-item padrinho-card">
+      <h4>Mariana e Rodrigo</h4>
+      <p>Mais que padrinhos, parceiros de vida e irmãos de coração.</p>
+    </div>
+
+  </div>
+  <!-- Controles -->
+  <div class="carousel-controls">
+    <span class="prev" onclick="moveSlide(-1)">❮</span>
+    <span class="next" onclick="moveSlide(1)">❯</span>
+  </div>
+</section>
+
+
+
+     <!-- NOVA SEÇÃO LOCAL -->
+  <section id="local" class="section-card">
+    <h3>Local da Cerimônia</h3>
+    <p>Rua Itaporé Lt:55, Qd144 - Vista Alegre, São Gonçalo</p>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.9847278390184!2d-42.95861262547377!3d-22.80302977932822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9997ba9cb89fd1%3A0x48b6fcdae6ad3ce9!2sPiscinas%20Bar%20do%20Bruninho!5e0!3m2!1spt-BR!2sbr!4v1758669901291!5m2!1spt-BR!2sbr" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+    <p><a href="https://maps.app.goo.gl/TqC1d1p2c5e9ioiB7" target="_blank">Ver no Google Maps</a></p>
+  </section>
+
+  <!-- FORMULÁRIO DE PRESENÇA AJUSTADO -->
+  <section id="presenca" class="section-card">
+    <h3>Confirme sua Presença</h3>
+    <form action="https://formspree.io/f/mqaykydb" method="POST">
+      
+      <label>
+        Seu Nome Completo:
+        <input type="text" name="nome" required>
+      </label>
+      
+      <label>
+        Vai levar acompanhante?
+        <select name="acompanhante">
+          <option>Não</option>
+          <option>Sim</option>
+        </select>
+      </label>
+      
+      <label>
+        Quantos acompanhantes?
+        <input type="number" name="quantidade_acompanhantes" min="0">
+      </label>
+      
+      <label>
+        Nome Completo dos Acompanhantes:
+        <textarea name="nomes_acompanhantes"></textarea>
+      </label>
+
+      <!-- Campos extras para melhor organização -->
+      <input type="hidden" name="_subject" value="Confirmação de Presença - Casamento">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    Com carinho, Priscila & Walterlan ❤
+  </footer>
+
+  <script>
+    // Abre/fecha menu
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('menu-show');
+      menu.classList.toggle('menu-hidden');
+    }
+
+    // Fecha o menu ao clicar em um link
+    const links = document.querySelectorAll("#menu a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById('menu');
+        if (window.innerWidth <= 768) {
+          menu.classList.remove('menu-show');
+          menu.classList.add('menu-hidden');
+        }
+      });
+    });
+
+    // Contagem regressiva
+    const countdownEl = document.getElementById('countdown');
+    const weddingDate = new Date("2025-11-22T19:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        countdownEl.innerHTML = "Chegou o grande dia!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Carrossel dos padrinhos
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".carousel-item");
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[n].classList.add("active");
+    }
+
+    function moveSlide(step) {
+      slideIndex = (slideIndex + step + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    // Passa automaticamente a cada 5s
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
+
+    // Inicia mostrando o primeiro
+    showSlide(slideIndex);
+  </script>
+</body>
+</html>

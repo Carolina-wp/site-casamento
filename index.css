@@ -1,0 +1,92 @@
+/* ============================= */
+/* INDEX - CONVITE DE ENTRADA    */
+/* ============================= */
+
+body.convite {
+  background: url("fundo-rose.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+/* Cartão do convite */
+.convite-card {
+  background: rgba(255, 255, 255, 0.9); /* levemente transparente */
+  border: 3px solid #d4a373;
+  border-radius: 25px;
+  padding: 80px 40px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Brilho suave ao passar o mouse no cartão */
+.convite-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: 0.6s;
+}
+
+.convite-card:hover {
+  transform: scale(1.05); /* aumenta suavemente */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.convite-card:hover::after {
+  left: 100%;
+}
+
+/* Botão delicado */
+.btn-convite {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d16d88;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 240, 245, 0.7);
+  border: 2px solid #d16d88;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-convite:hover {
+  background: rgba(209, 109, 136, 0.2); /* leve tonalidade rosa */
+  border-color: #d16d88;
+  color: #a63b60; /* texto um pouco mais escuro */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Responsividade para celular */
+@media (max-width: 480px) {
+  .convite-card {
+    padding: 50px 20px;
+    width: 90%; /* ocupa quase toda a largura da tela */
+    max-width: none;
+  }
+
+  .convite-card h1 {
+    font-size: 2.5rem;
+  }
+
+  .btn-convite {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
